@@ -1,5 +1,6 @@
 # nomadcoffee-frontend
 인스타클론 6주 챌린지
+backend > https://nomadcoffee-backend-byoungju.herokuapp.com/graphql
 
 1 : (06-04) From #8.0 to #8.9
 
@@ -9,3 +10,9 @@
     Set up react-router
     Set up styled-components
     Set up reactive variables on Apollo Client to enable dark mode and authentication
+
+2 : (06-07) From #10.0 to #10.14
+
+    In our Nomad Coffee the coffee shop owner will have a web admin panel.
+
+    Your task is to implement sign up and login!
