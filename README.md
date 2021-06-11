@@ -16,3 +16,7 @@ backend > https://nomadcoffee-backend-byoungju.herokuapp.com/graphql
     In our Nomad Coffee the coffee shop owner will have a web admin panel.
 
     Your task is to implement sign up and login!
+
+
+4 : (06-11) From #19.5
+    Deploy your frontend to Netlify!

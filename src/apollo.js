@@ -27,7 +27,29 @@ export const disableDarkMode = () => {
   darkModeVar(false);
 };
 
+const httpLink = createHttpLink({
+  uri:
+    process.env.NODE_ENV === "production"
+      ? "https://nomadcoffee-backend-byoungju.herokuapp.com/graphql"
+      : "http://localhost:4000/graphql",
+});
+
+const authLink = setContext((_, { headers }) => {
+  return {
+    headers: {
+      ...headers,
+      token: localStorage.getItem(TOKEN),
+    },
+  };
+});
+
 export const client = new ApolloClient({
-  uri: "https://nomadcoffee-backend-byoungju.herokuapp.com/graphql",
-  cache: new InMemoryCache(),
+  link: authLink.concat(httpLink),
+  cache: new InMemoryCache({
+    typePolicies: {
+      User: {
+        keyFields: (obj) => `User:${obj.username}`,
+      },
+    },
+  }),
 });
